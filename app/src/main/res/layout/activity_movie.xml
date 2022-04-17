@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieActivity"
+    android:background="#263238">
+
+
+    <ImageView
+        android:id="@+id/imagee"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        android:layout_below="@+id/imagee"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/overviewWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="0dp"
+        android:text="Overview"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:layout_below="@+id/overviewWord"/>
+
+    <TextView
+        android:id="@+id/rateWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/overview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="0dp"
+        android:text="Rate : "
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/_19sdp" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/overview"
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/rateWord"
+        android:backgroundTint="#FFC20C"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressBackgroundTint="#FFC20C"
+        android:progressTint="#FFC20C"
+        android:rating="2"
+        android:secondaryProgress="5"
+        android:secondaryProgressTint="#474747" />
+    <TextView
+        android:id="@+id/rate"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFC20C"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:layout_below="@+id/overview"
+        android:text="etwetwtwetwe"
+        android:layout_toRightOf="@id/rating"/>
+
+    <TextView
+        android:id="@+id/languageWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="6dp"
+        android:text="Language : "
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/language"
+        android:text="eeee"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:layout_below="@+id/rating"
+        android:layout_toRightOf="@id/languageWord"/>
+
+
+    <TextView
+        android:id="@+id/dateWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/languageWord"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="6dp"
+        android:text="Publish date : "
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/dateWord"
+        android:layout_below="@+id/languageWord"
+        />
+
+</RelativeLayout>
