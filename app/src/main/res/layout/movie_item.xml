@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,8 +39,10 @@
             android:textSize="@dimen/_13sdp"
             android:layout_toRightOf="@id/movieImg"
             android:layout_below="@+id/movieName"/>
+
+
         <TextView
-            android:id="@+id/movieRate"
+            android:id="@+id/rateSAD"
             android:layout_margin="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,6 +50,37 @@
             android:textSize="@dimen/_13sdp"
             android:layout_toRightOf="@id/movieImg"
             android:layout_below="@+id/movieLanguage"/>
+        <RatingBar
+            android:id="@+id/ratingIt"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/rateSAD"
+            android:layout_below="@+id/movieLanguage"
+            android:backgroundTint="#FFC20C"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="#FFC20C"
+            android:progressTint="#FFC20C"
+            android:rating="2"
+            android:secondaryProgress="5"
+            android:secondaryProgressTint="#474747" />
+
+        <TextView
+            android:id="@+id/movieRate"
+            android:layout_margin="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFC20C"
+            android:textSize="@dimen/_13sdp"
+            android:layout_toRightOf="@id/ratingIt"
+            android:layout_below="@+id/movieLanguage"/>
+
+
 
         <TextView
             android:id="@+id/movieDate"

@@ -2,9 +2,12 @@ package com.example.favoritemovie.viewmodels;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.hilt.lifecycle.ViewModelInject;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +17,7 @@ import com.example.favoritemovie.pojo.MovieResponse;
 import com.example.favoritemovie.repository.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Scheduler;
@@ -25,7 +29,7 @@ public class MovieViewModel extends ViewModel {
 
     Repository repository;
     MutableLiveData<ArrayList<Movie>> mutableLiveData = new MutableLiveData<>();
-    LiveData<ArrayList<Movie>> cashedMovies;
+    LiveData<List<Movie>> cashedMovies;
 
     @ViewModelInject
     public MovieViewModel(Repository repository) {
@@ -35,6 +39,7 @@ public class MovieViewModel extends ViewModel {
     public MutableLiveData<ArrayList<Movie>> getMovieList(){
         return mutableLiveData;
     }
+
     public void getMovies(){
         Log.i("Tagg", "appl: ");
         repository.getMovieResponse()
@@ -52,11 +57,11 @@ public class MovieViewModel extends ViewModel {
                         , error -> Log.i("TAG", "getMovies: "+error.getMessage()));
     }
 
-    public void insertCachedMovies(ArrayList<Movie> list){
+    public void insertCachedMovies(List<Movie> list){
         repository.insertMovies(list);
     }
-    public void getCachedMovies(){
-        cashedMovies = repository.getMovies();
+    public LiveData<List<Movie>> getCachedMovies(){
+        return repository.getMovies();
     }
 
 }

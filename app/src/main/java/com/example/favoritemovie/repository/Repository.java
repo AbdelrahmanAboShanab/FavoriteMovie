@@ -10,6 +10,7 @@ import com.example.favoritemovie.pojo.Movie;
 import com.example.favoritemovie.pojo.MovieResponse;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -25,21 +26,21 @@ public class Repository {
     private MovieApiService movieApiService;
     MovieDao movieDao;
 
-
     @Inject
-    public Repository(MovieApiService movieApiService) {
+    public Repository(MovieApiService movieApiService, MovieDao movieDao) {
         this.movieApiService = movieApiService;
+        this.movieDao = movieDao;
     }
 
     public Observable<MovieResponse> getMovieResponse(){
         return movieApiService.getResponse();
     }
 
-    public void insertMovies(ArrayList<Movie> list){
+    public void insertMovies(List<Movie> list){
         movieDao.InsertMovies(list);
     }
 
-    public LiveData<ArrayList<Movie>> getMovies(){
+    public LiveData<List<Movie>> getMovies(){
         return movieDao.GetMovies();
     }
 }
